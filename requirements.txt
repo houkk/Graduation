@@ -1,0 +1,12 @@
+django==1.9.3
+requests==2.10.0
+simplejson==3.8.2
+matplotlib==1.5.1
+djangorestframework==3.3.2
+djangorestframework-filters==0.7.0
+xlrd==0.9.4
+xlwt==1.0.0
+scipy==0.17.0
+sklearn
+mysqldb
+django-admin-bootstrapped==2.5.7

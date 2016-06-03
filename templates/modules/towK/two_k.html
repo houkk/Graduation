@@ -1,0 +1,85 @@
+<div class="am-cf am-padding">
+<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">二分K-均值</strong></div>
+</div>
+<hr data-am-widget="divider" style="" class="am-divider am-divider-default"/>
+
+<div class="am-g">
+    <div class="am-u-sm-12 am-u-md-6">
+        <div id="docToolbar" class="btn-group table-control">
+            <button type="button" class="btn btn-default" id="addDoc" title="添加">
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
+            <button type="button" class="btn btn-default" id="editDoc" title="编辑">
+                <i class="glyphicon glyphicon-edit"></i>
+            </button>
+            <button type="button" class="btn btn-default" id="deleteDoc" title="删除">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="am-g" id="table">
+    <div class="am-u-sm-12">
+        <div class="pull-right search" style="float:right;margin-top: 10px;margin-left: 5px">
+            <input class="form-control" type="text" id="search" onkeyup="searchEvent()" placeholder="数据集名称查询">
+        </div>
+        <table class="table-control" id="indexTalbe" data-toolbar="#docToolbar"></table>
+    </div>
+</div>
+
+
+<div class="am-g" style="display: none" id="docPanel">
+    <div class="am-u-sm-2"><a onclick="turnPage('/k/')" class="am-close am-close-alt am-close-spin am-icon-times"></a></div>
+    <div class="am-u-sm-8">
+        <form class="am-form data-am-validator">
+            <div class="am-input-group am-input-group-primary am-form-group" id="data1">
+              <span class="am-input-group-label"><i class="am-icon-database am-icon-fw"></i></span>
+              <input type="text" id="dataName" class="am-form-field" placeholder="数据集名称">
+            </div>
+            <div id="kv-error-1" style="margin-top:10px; display: none" class="file-error-message">
+                <span class="close kv-error-close"></span>
+                <ul>
+                    <li id="kv-error-1-li"></li>
+                </ul>
+            </div>
+            <div class="am-input-group am-input-group-secondary am-form-group" id="data2">
+              <span class="am-input-group-label"><i class="am-icon-text-width am-icon-fw"></i></span>
+              <textarea rows="5" placeholder="描述" id="dataDescribe" minlength="5" required></textarea>
+            </div>
+
+            <div class="am-input-group am-input-group-secondary am-form-group" id="data3">
+              <span class="am-input-group-label"><i class="am-icon-sort-numeric-asc am-icon-fw"></i></span>
+              <select id="clusterNum" data-am-selected="{btnWidth: '40%', btnSize: 'sm', btnStyle: 'secondary'}">
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+              </select>
+            </div>
+
+            <div id="dataInputDiv">
+                <input id="dataSetInput" name="file" type="file" class="file">
+                <div id="kv-error-2" style="margin-top:10px; display:none"></div>
+                <div id="kv-success-2" class="alert alert-success fade in" style="margin-top:10px;display:none"></div>
+            </div>
+
+            <div id="dataEdit" style="text-align: right;display: none" class="am-form-group am-panel-footer">
+                <button type="button" class="am-btn am-btn-danger am-radius" id="cancel">取消</button>
+                <button type="button" class="am-btn am-btn-success am-radius" id="create">修改</button>
+            </div>
+
+
+         </form>
+    </div>
+    <div class="am-u-sm-2"></div>
+
+</div>
+
+
+<script src="../../../templates/modules/towK/two_k.js"></script>
